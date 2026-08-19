@@ -2,186 +2,350 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SBH Crystal Beach Hotel & Suites · Share your experience</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SBH Crystal Beach Hotel & Suites · Reviews</title>
 <style>
 :root {
-  --gold:#c99a2e;
-  --text:#4a4a4a;
-  --muted:#707070;
-  --line:#dfc16f;
-  --bg:#fbfaf7;
-  --card:#ffffff;
+  --gold: #c89a1f;
+  --text: #4b4b4b;
+  --muted: #6d6d6d;
+  --line: #d6aa42;
+  --white: #ffffff;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
   font-family: Arial, Helvetica, sans-serif;
-  background:linear-gradient(#fbfaf7,#ffffff);
-  color:var(--text);
+  color: var(--text);
+  background: #f7f7f4;
 }
-.wrap{
-  min-height:100vh;
-  max-width:560px;
-  margin:auto;
-  padding:28px 22px 38px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100vh;
+  box-shadow: 0 0 24px rgba(0,0,0,.08);
 }
-.logo{
-  text-align:center;
-  line-height:1;
-  margin-bottom:10px;
+.top {
+  padding: 30px 24px 28px;
+  text-align: center;
+  background: #fff;
 }
-.logo .sbh{
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size:58px;
-  letter-spacing:2px;
-  color:#555;
+.logo {
+  width: 190px;
+  max-width: 48vw;
+  height: auto;
+  display: block;
+  margin: 0 auto 14px;
 }
-.logo .sbh b{color:var(--gold);font-weight:400}
-.logo .small{font-size:14px;letter-spacing:2px;margin-top:4px}
-.hotel{
-  text-align:center;
-  font-family:Georgia, 'Times New Roman', serif;
-  letter-spacing:1.4px;
-  font-size:25px;
-  margin:18px 0 2px;
+.hotel {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  letter-spacing: 1.2px;
+  margin-top: 4px;
 }
-.subhotel{
-  text-align:center;
-  font-family:Georgia, 'Times New Roman', serif;
-  letter-spacing:2px;
-  font-size:15px;
-  margin-bottom:4px;
+.subhotel {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  letter-spacing: 2.2px;
+  margin-top: 2px;
 }
-.stars{text-align:center;font-size:20px;letter-spacing:4px;margin-bottom:22px}
-.thanks{
-  text-align:center;
-  font-family:'Brush Script MT','Segoe Script',cursive;
-  color:var(--gold);
-  font-size:48px;
-  margin:0 0 16px;
+.stars {
+  font-size: 21px;
+  letter-spacing: 5px;
+  margin: 8px 0 15px;
 }
-.rule{height:1px;background:var(--line);margin:0 26px 24px}
-h1{
-  font-family:Georgia, 'Times New Roman', serif;
-  text-align:center;
-  font-weight:500;
-  font-size:27px;
+.thank {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 650px;
+  margin: 0 auto 18px;
+}
+.thank:before, .thank:after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.thank span {
+  font-family: "Brush Script MT","Segoe Script",cursive;
+  font-size: 50px;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.languages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 680px;
+  margin: 0 auto;
+}
+.lang {
+  padding: 0 20px;
+}
+.lang + .lang {
+  border-left: 1px solid rgba(200,154,31,.6);
+}
+.lang .name {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 13px;
+}
+.lang .heart {
+  color: var(--gold);
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.lang h2 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1.08;
+  font-weight: 500;
+}
+.lang .divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0 12px;
+}
+.lang .divider:before,
+.lang .divider:after {
+  content:"";
+  height:1px;
+  width:44%;
+  background: var(--line);
+}
+.lang .divider i {
+  width:8px;height:8px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  margin:0 7px;
+}
+.lang p {
   margin:0;
+  font-size:14px;
+  line-height:1.5;
 }
-.intro{
+.reviews {
+  position: relative;
+  padding: 40px 20px 42px;
+  background:
+    linear-gradient(rgba(255,255,255,.30), rgba(248,236,217,.20)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85") center center/cover no-repeat;
+}
+.reviews .content {
+  max-width: 540px;
+  margin: 0 auto;
+}
+.review-title {
   text-align:center;
-  color:var(--muted);
-  line-height:1.55;
-  font-size:15px;
-  margin:10px auto 24px;
-  max-width:430px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.15;
+  text-shadow: 0 1px 4px rgba(255,255,255,.9);
 }
-.buttons{display:grid;gap:14px}
-a.btn{
-  text-decoration:none;
-  color:var(--text);
-  background:var(--card);
-  border:1px solid #e7e1d4;
-  border-radius:14px;
-  padding:16px 18px;
+.review-sub {
+  text-align:center;
+  margin-top:8px;
+  font-style:italic;
+  font-size:16px;
+  line-height:1.4;
+  text-shadow:0 1px 4px rgba(255,255,255,.95);
+}
+.gold-mark {
+  width:10px;height:10px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  margin:18px auto 24px;
+}
+.buttons {
+  display:grid;
+  gap:14px;
+}
+.btn {
   display:flex;
   align-items:center;
-  gap:14px;
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  min-height:86px;
+  padding:14px 18px;
+  text-decoration:none;
+  color:var(--text);
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(210,210,210,.85);
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
-.icon{
-  width:44px;height:44px;border-radius:10px;
-  display:grid;place-items:center;
-  font-weight:700;font-size:19px;
-  border:1px solid #eee;
-  background:#fff;
+.logo-box {
+  width:88px;
+  min-width:88px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-right:16px;
 }
-.g{color:#4285F4}
-.t{color:#00aa6c}
-.h{color:#0b5aa4}
-.label{flex:1}
-.label strong{
+.logo-box img {
+  max-width:80px;
+  max-height:52px;
+  object-fit:contain;
+}
+.label {
+  flex:1;
+}
+.label strong {
   display:block;
-  font-family:Georgia,'Times New Roman',serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size:23px;
   font-weight:500;
 }
-.label span{display:block;margin-top:3px;font-size:13px;color:var(--muted)}
-.arrow{color:var(--gold);font-size:28px}
-.footer{
+.label span {
+  display:block;
+  margin-top:4px;
+  font-size:14px;
+  color:#666;
+}
+.arrow {
+  color:var(--gold);
+  font-size:36px;
+  margin-left:10px;
+}
+.footer {
   text-align:center;
-  margin-top:26px;
-  font-family:Georgia,'Times New Roman',serif;
+  margin-top:28px;
+  text-shadow:0 1px 4px rgba(255,255,255,.95);
+}
+.footer .heart {
+  color:var(--gold);
+  font-size:28px;
+  margin-bottom:5px;
+}
+.footer .main {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size:18px;
+}
+.footer .sub {
+  margin-top:4px;
+  font-style:italic;
+  font-size:15px;
   line-height:1.5;
 }
-.footer .heart{color:var(--gold);font-size:27px}
-.note{font-size:13px;color:#777;margin-top:7px}
-@media (max-width:390px){
-  .logo .sbh{font-size:50px}
-  .hotel{font-size:22px}
-  .thanks{font-size:42px}
-  h1{font-size:24px}
+.footer .site {
+  margin-top:25px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+  color:var(--gold);
+  font-size:16px;
+}
+@media (max-width: 600px) {
+  .top { padding: 24px 12px 24px; }
+  .logo { width: 165px; }
+  .hotel { font-size: 23px; }
+  .subhotel { font-size: 15px; }
+  .thank span { font-size: 42px; }
+  .lang { padding:0 9px; }
+  .lang .name { font-size:11px; }
+  .lang h2 { font-size:18px; }
+  .lang p { font-size:11px; }
+  .reviews { padding:32px 14px 36px; }
+  .review-title { font-size:25px; }
+  .review-sub { font-size:14px; }
+  .btn { min-height:78px; padding:12px 12px; }
+  .logo-box { width:72px; min-width:72px; margin-right:10px; }
+  .logo-box img { max-width:65px; max-height:44px; }
+  .label strong { font-size:20px; }
+  .label span { font-size:12px; }
 }
 </style>
 </head>
 <body>
-<main class="wrap">
-  <div class="logo">
-    <div class="sbh">SB<b>H</b></div>
-    <div class="small">HOTELS &amp; RESORTS</div>
-  </div>
+<div class="page">
 
+<section class="top">
+  <img class="logo" src="logo-sbh.png" alt="SBH Hotels & Resorts">
   <div class="hotel">SBH CRYSTAL BEACH</div>
   <div class="subhotel">HOTEL &amp; SUITES</div>
   <div class="stars">★★★★</div>
 
-  <div class="thanks">Thank you ♡</div>
-  <div class="rule"></div>
+  <div class="thank"><span>Thank you ♡</span></div>
 
-  <h1>¿Dónde desea compartir su experiencia?</h1>
-  <div class="intro">
-    Where would you like to share your experience?<br>
-    Wo möchten Sie Ihre Erfahrung teilen?
+  <div class="languages">
+    <div class="lang">
+      <div class="name">ESPAÑOL</div>
+      <div class="heart">♡</div>
+      <h2>Gracias<br>por su visita</h2>
+      <div class="divider"><i></i></div>
+      <p>Escanee el código QR<br>y comparta su opinión.</p>
+    </div>
+
+    <div class="lang">
+      <div class="name">ENGLISH</div>
+      <div class="heart">♡</div>
+      <h2>Thank you<br>for your visit</h2>
+      <div class="divider"><i></i></div>
+      <p>Scan the QR code<br>and share your opinion.</p>
+    </div>
+
+    <div class="lang">
+      <div class="name">DEUTSCH</div>
+      <div class="heart">♡</div>
+      <h2>Vielen Dank<br>für Ihren Besuch</h2>
+      <div class="divider"><i></i></div>
+      <p>Scannen Sie den QR-Code<br>und teilen Sie Ihre Meinung.</p>
+    </div>
   </div>
+</section>
 
-  <section class="buttons">
-    <a class="btn" href="https://www.google.com/travel/hotels/entity/ChcI_8qt8PCAiptWGgsvZy8xdGYxcTIychAB" target="_blank" rel="noopener">
-      <div class="icon g">G</div>
-      <div class="label">
-        <strong>Google</strong>
-        <span>Dejar una reseña · Write a review · Bewertung abgeben</span>
+<section class="reviews">
+  <div class="content">
+    <div class="review-title">¿Dónde desea compartir su reseña?</div>
+    <div class="review-sub">
+      Where would you like to share your review?<br>
+      Wo möchten Sie Ihre Bewertung teilen?
+    </div>
+    <div class="gold-mark"></div>
+
+    <div class="buttons">
+      <a class="btn" href="https://www.google.com/travel/hotels/entity/ChcI_8qt8PCAiptWGgsvZy8xdGYxcTIychAB/reviews?utm_source=htls&ts=CAEaIAoCGgASGhIUCgcI6g8QCBgUEgcI6g8QCBgVGAEyAhAAKgkKBToDRVVSGgA" target="_blank" rel="noopener">
+        <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google"></div>
+        <div class="label">
+          <strong>Google</strong>
+          <span>Dejar una reseña</span>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+
+      <a class="btn" href="https://www.tripadvisor.co.uk/UserReviewEdit-g659634-d590306-SBH_Crystal_Beach_Hotel_Suites-Costa_Calma_Pajara_Jandia_Peninsula_Fuerteventura_Canary_Islan.html" target="_blank" rel="noopener">
+        <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Tripadvisor_Logo_circle-green_horizontal-lockup_registered_RGB.svg" alt="TripAdvisor"></div>
+        <div class="label">
+          <strong>TripAdvisor</strong>
+          <span>Compartir mi experiencia</span>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+
+      <a class="btn" href="https://www.holidaycheck.de/wcf/hotelreview/contribution/df3765d2-f646-3167-82b6-793dc39433b7" target="_blank" rel="noopener">
+        <div class="logo-box"><img src="https://upload.wikimedia.org/wikipedia/commons/2/25/HolidayCheck_Logo.svg" alt="HolidayCheck"></div>
+        <div class="label">
+          <strong>HolidayCheck</strong>
+          <span>Hotel bewerten</span>
+        </div>
+        <div class="arrow">›</div>
+      </a>
+    </div>
+
+    <div class="footer">
+      <div class="heart">♡</div>
+      <div class="main">Su opinión nos ayuda a seguir mejorando.</div>
+      <div class="sub">
+        Your feedback helps us to improve.<br>
+        Ihre Meinung hilft uns, uns weiter zu verbessern.
       </div>
-      <div class="arrow">›</div>
-    </a>
-
-    <a class="btn" href="https://www.tripadvisor.com/Hotel_Review-g659634-d590306-Reviews-SBH_Crystal_Beach_Hotel_Suites-Costa_Calma_Pajara_Jandia_Peninsula_Fuerteventura_Canary.html" target="_blank" rel="noopener">
-      <div class="icon t">TA</div>
-      <div class="label">
-        <strong>TripAdvisor</strong>
-        <span>Compartir mi experiencia · Share my experience</span>
-      </div>
-      <div class="arrow">›</div>
-    </a>
-
-    <a class="btn" href="https://www.holidaycheck.de/hi/sbh-crystal-beach-hotel-suites/df3765d2-f646-3167-82b6-793dc39433b7" target="_blank" rel="noopener">
-      <div class="icon h">HC</div>
-      <div class="label">
-        <strong>HolidayCheck</strong>
-        <span>Hotel bewerten · Valorar el hotel</span>
-      </div>
-      <div class="arrow">›</div>
-    </a>
-  </section>
-
-  <div class="footer">
-    <div class="heart">♡</div>
-    Su opinión nos ayuda a seguir mejorando.<br>
-    <span class="note">Your feedback helps us improve. · Ihre Meinung hilft uns, uns weiter zu verbessern.</span>
+      <div class="site">www.sbhhotels.com</div>
+    </div>
   </div>
-</main>
+</section>
+
+</div>
 </body>
 </html>
